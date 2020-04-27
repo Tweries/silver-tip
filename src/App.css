@@ -1,3 +1,30 @@
 .App {
+  background-color: #f5f5f5;
+  border: 1px solid gray;
+  margin: 32px auto;
+  padding: 16px;
   text-align: center;
+  width: 400px;
+}
+
+.App__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.App__h1,
+.App__input,
+.App__textarea {
+  background-color: transparent;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App__input,
+.App__textarea {
+  border: 0 solid gray;
+  border-bottom-width: 1px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding: 8px;
 }
