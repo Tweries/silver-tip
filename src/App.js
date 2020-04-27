@@ -7,7 +7,6 @@ const CHANGE_URL = 'CHANGE_URL';
 
 function App() {
   function reducer(state, action) {
-    console.log(action);
     switch (action.type) {
       case CHANGE_BIO:
         return { ...state, bio: action.value };
@@ -22,7 +21,7 @@ function App() {
 
   const initializerArgs = { bio: '', name: '', url: '' };
 
-  const [{ bio }, dispatch] = useReducer(reducer, initializerArgs);
+  const [{ bio, name, url }, dispatch] = useReducer(reducer, initializerArgs);
 
   return (
     <div className="App">
@@ -36,6 +35,7 @@ function App() {
           }
           placeholder="Name"
           type="text"
+          value={name}
         />
         <textarea
           className="App__textarea"
@@ -56,6 +56,7 @@ function App() {
           }
           placeholder="URL"
           type="text"
+          value={url}
         />
       </form>
     </div>
