@@ -36,6 +36,12 @@ exports[`<App /> to match snapshot 1`] = `
         type="text"
         value="https://www.microsoft.com/en-us/"
       />
+      <button
+        class="App__button"
+        type="button"
+      >
+        Clear
+      </button>
     </form>
   </div>
 </div>

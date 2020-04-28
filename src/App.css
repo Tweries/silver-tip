@@ -7,11 +7,7 @@
   width: 400px;
 }
 
-.App__form {
-  display: flex;
-  flex-direction: column;
-}
-
+.App__button,
 .App__h1,
 .App__input,
 .App__textarea {
@@ -27,4 +23,19 @@
   font-size: 16px;
   margin-bottom: 8px;
   padding: 8px;
+}
+
+.App__button {
+  background-color: blue;
+  border-width: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px auto 0 auto;
+  padding: 8px 16px;
+}
+
+.App__form {
+  display: flex;
+  flex-direction: column;
 }

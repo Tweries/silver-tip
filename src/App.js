@@ -4,6 +4,7 @@ import reducer, {
   CHANGE_BIO,
   CHANGE_NAME,
   CHANGE_URL,
+  CLEAR_ALL,
   emptyState
 } from './store/reducer';
 import './App.css';
@@ -50,6 +51,13 @@ function App() {
           type="text"
           value={url}
         />
+        <button
+          className="App__button"
+          onClick={() => dispatch({ type: CLEAR_ALL })}
+          type="button"
+        >
+          Clear
+        </button>
       </form>
     </div>
   );
