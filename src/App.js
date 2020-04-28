@@ -1,12 +1,12 @@
 import React from 'react';
 import useReducerWithLocalStorage from './hooks/useReducerWithLocalStorage';
-import './App.css';
 import reducer, {
   CHANGE_BIO,
   CHANGE_NAME,
   CHANGE_URL,
   emptyState
 } from './store/reducer';
+import './App.css';
 
 function App() {
   const [{ bio, name, url }, dispatch] = useReducerWithLocalStorage({

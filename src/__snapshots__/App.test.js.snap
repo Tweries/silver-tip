@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> to match snapshot 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <h1
+      class="App__h1"
+    >
+      Public profile
+    </h1>
+    <form
+      class="App__form"
+    >
+      <input
+        class="App__input"
+        name="name"
+        placeholder="Name"
+        type="text"
+        value="Satya Nadella"
+      />
+      <textarea
+        class="App__textarea"
+        cols="40"
+        name="bio"
+        placeholder="Bio"
+        rows="10"
+      >
+        CEO of Microsoft
+      </textarea>
+      <input
+        class="App__input"
+        name="url"
+        placeholder="URL"
+        type="text"
+        value="https://www.microsoft.com/en-us/"
+      />
+    </form>
+  </div>
+</div>
+`;
