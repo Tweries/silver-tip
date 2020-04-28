@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
 import './App.css';
 
 const CHANGE_BIO = 'CHANGE_BIO';
@@ -6,6 +7,13 @@ const CHANGE_NAME = 'CHANGE_NAME';
 const CHANGE_URL = 'CHANGE_URL';
 
 function App() {
+  const emptyState = { bio: '', name: '', url: '' };
+
+  const [localStorageState, setLocalStorageState] = useLocalStorage(
+    'REACT_APP_STATE',
+    JSON.stringify(emptyState)
+  );
+
   function reducer(state, action) {
     switch (action.type) {
       case CHANGE_BIO:
@@ -19,9 +27,16 @@ function App() {
     }
   }
 
-  const initializerArgs = { bio: '', name: '', url: '' };
-
-  const [{ bio, name, url }, dispatch] = useReducer(reducer, initializerArgs);
+  const [{ bio, name, url }, dispatch] = useReducer(
+    (state, action) => {
+      const newState = reducer(state, action);
+      setLocalStorageState(JSON.stringify(newState));
+      return newState;
+    },
+    {
+      ...JSON.parse(localStorageState)
+    }
+  );
 
   return (
     <div className="App">
