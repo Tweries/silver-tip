@@ -1,42 +1,19 @@
-import React, { useReducer } from 'react';
-import useLocalStorage from './hooks/useLocalStorage';
+import React from 'react';
+import useReducerWithLocalStorage from './hooks/useReducerWithLocalStorage';
 import './App.css';
-
-const CHANGE_BIO = 'CHANGE_BIO';
-const CHANGE_NAME = 'CHANGE_NAME';
-const CHANGE_URL = 'CHANGE_URL';
+import reducer, {
+  CHANGE_BIO,
+  CHANGE_NAME,
+  CHANGE_URL,
+  emptyState
+} from './store/reducer';
 
 function App() {
-  const emptyState = { bio: '', name: '', url: '' };
-
-  const [localStorageState, setLocalStorageState] = useLocalStorage(
-    'REACT_APP_STATE',
-    JSON.stringify(emptyState)
-  );
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case CHANGE_BIO:
-        return { ...state, bio: action.value };
-      case CHANGE_NAME:
-        return { ...state, name: action.value };
-      case CHANGE_URL:
-        return { ...state, url: action.value };
-      default:
-        return state;
-    }
-  }
-
-  const [{ bio, name, url }, dispatch] = useReducer(
-    (state, action) => {
-      const newState = reducer(state, action);
-      setLocalStorageState(JSON.stringify(newState));
-      return newState;
-    },
-    {
-      ...JSON.parse(localStorageState)
-    }
-  );
+  const [{ bio, name, url }, dispatch] = useReducerWithLocalStorage({
+    initializerArg: emptyState,
+    key: 'REACT_APP_STATE',
+    reducer
+  });
 
   return (
     <div className="App">
