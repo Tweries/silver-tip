@@ -38,6 +38,7 @@ exports[`<App /> to match snapshot 1`] = `
       />
       <button
         class="App__button"
+        name="clear"
         type="button"
       >
         Clear
