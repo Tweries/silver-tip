@@ -5,10 +5,12 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.3",
+    "@testing-library/react-hooks": "^3.2.1",
     "@testing-library/user-event": "^10.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "build": "react-scripts build",
@@ -43,6 +45,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
+      "!src/hooks/useLocalStorage.js",
       "!src/index.js",
       "!src/initializeReactGA.js",
       "!src/serviceWorker.js"
