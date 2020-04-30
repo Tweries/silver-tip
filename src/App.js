@@ -1,5 +1,5 @@
 import React from 'react';
-import useReducerWithLocalStorage from './hooks/useReducerWithLocalStorage';
+import useReducerWithLocalStorage from 'use-reducer-with-local-storage';
 import reducer, { emptyState } from './store/reducer';
 import './App.css';
 import makeHandleOnChange from './makeHandleOnChange';

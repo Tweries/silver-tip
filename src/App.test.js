@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import useReducerWithLocalStorage from './hooks/useReducerWithLocalStorage';
+import useReducerWithLocalStorage from 'use-reducer-with-local-storage';
 import App from './App';
 
-jest.mock('./hooks/useReducerWithLocalStorage');
+jest.mock('use-reducer-with-local-storage');
 
 describe('<App />', () => {
   useReducerWithLocalStorage.mockImplementation(() => [
