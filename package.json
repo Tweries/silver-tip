@@ -15,8 +15,10 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint src",
+    "predeploy": "yarn build",
     "prettier": "prettier 'src/**/*.{css,js,json}'",
     "prettier:fix": "yarn prettier --write",
     "start": "react-scripts start",
@@ -40,6 +42,7 @@
   "devDependencies": {
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
+    "gh-pages": "^2.2.0",
     "prettier": "^2.0.5"
   },
   "description": "silver-tip is a playground for React",
@@ -51,5 +54,6 @@
       "!src/initializeReactGA.js",
       "!src/serviceWorker.js"
     ]
-  }
+  },
+  "homepage": "https://Tweries.github.io/silver-tip"
 }
